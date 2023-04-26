@@ -7,8 +7,12 @@
   "name": "chat",
   "version": "1.0.0",
   "type": "module",
+  "engines": {
+    "node": "14.x"
+  },
   "main": "./src/app.js",
   "scripts": {
+    "start": "node ./src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

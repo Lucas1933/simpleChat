@@ -4,7 +4,7 @@ import __dirname from "./utils.js";
 import viewsRouter from "./routes/viewsRouter.js";
 import { Server } from "socket.io";
 const app = express();
-const port = 8080;
+const PORT = process.env.PORT || 8080;
 app.engine("handlebars", handlebars.engine());
 app.set("views", `${__dirname}/views`);
 app.set("view engine", "handlebars");
@@ -14,8 +14,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/", viewsRouter);
-const serverExpress = app.listen(port, () => {
-  console.log(`Listening on ${port}`);
+const serverExpress = app.listen(PORT, () => {
+  console.log(`Listening on ${PORT}`);
 });
 
 const io = new Server(serverExpress);
